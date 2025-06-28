@@ -177,27 +177,262 @@
       <div class="industry-card">
         <img src="https://cdn-icons-png.flaticon.com/512/2872/2872325.png" alt="Healthcare" />
         <p><strong>สุขภาพ</strong><br>ติดตาม KPI ยา เวชภัณฑ์ และแนวโน้มผู้ป่วย</p>
-      </div>
-      <div class="industry-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3203/3203071.png" alt="Manufacturing" />
-        <p><strong>โรงงาน/ผลิต</strong><br>วางแผนสต๊อกวัตถุดิบ จัดรอบการผลิตอัตโนมัติ</p>
-      </div>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benja | นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      margin: 0;
+      background-color: #0a0f1c;
+      color: #eaf6ff;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #00d8ff;
+      text-shadow: 0 0 15px #00f0ff;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #cceeff;
+      margin-top: 0.7rem;
+      font-weight: 600;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: #121b2d;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 0 45px rgba(0, 234, 255, 0.3);
+    }
+    h2 {
+      font-size: 2rem;
+      color: #00eaff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #00faff;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      padding-left: 1.8rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      font-weight: 600;
+      color: #cceeff;
+      font-size: 1.1rem;
+    }
+    ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #00faff;
+      font-size: 1.2rem;
+      top: 2px;
+      text-shadow: 0 0 5px #00faff;
+    }
+    a.project-link, .contact a {
+      color: #00eaff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a.project-link:hover, .contact a:hover {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+    .highlight {
+      color: #00faff;
+      font-weight: bold;
+      text-shadow: 0 0 6px #00faffaa;
+    }
+    .card {
+      background-color: #15243d;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 5px solid #00d9ff;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      color: #b8def0;
+      line-height: 1.4;
+      box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+      transition: background-color 0.3s ease;
+    }
+    .card:hover {
+      background-color: #1c2c4a;
+    }
+    .project img {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .project img:hover {
+      transform: scale(1.05);
+    }
+    .btn-line {
+      background: #00c300;
+      color: white;
+      padding: 0.9rem 1.8rem;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0,255,128,0.4);
+      transition: background 0.3s ease;
+    }
+    .btn-line:hover {
+      background: #00ff00;
+      box-shadow: 0 0 30px rgba(0,255,128,0.7);
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      font-size: 1rem;
+      color: #99ccff;
+      border-top: 1px solid #00eaff44;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      ul li, .card {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
 
-  <section class="section contact">
-    <h2>📬 ติดต่อ Benja</h2>
-    <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
-    <p>Line ID: <strong>ratcha42</strong></p>
-    <a href="https://line.me/ti/p/~ratcha42" class="btn-line" target="_blank">💬 แชทผ่าน LINE</a>
-    <div style="margin-top: 1rem;">
-      <img src="https://qr-official.line.me/gs/M_090uhbsq_GW.png" alt="QR LINE" width="180" />
-    </div>
-  </section>
+  <header>
+    <h1>Benja</h1>
+    <p>นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง | Strategic Insight & Decision Support</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌟 สิ่งที่เราทำ</h2>
+      <ul>
+        <li>วิเคราะห์ข้อมูลย้อนหลัง เพื่อสร้างกลยุทธ์ที่ใช้ได้จริงในธุรกิจ</li>
+        <li>ใช้ Python และเครื่องมือ Backtest แบบมืออาชีพ</li>
+        <li>รับข้อมูลจาก Database, Excel, CSV เพื่อนำมาวิเคราะห์</li>
+        <li>สรุปผลและนำเสนอด้วย Power BI แบบ Interactive Dashboard</li>
+        <li>แปลงข้อมูลเป็นบทสรุปเชิงกลยุทธ์ที่เข้าใจง่าย</li>
+      </ul>
+    </section>
+
+    <section class="project">
+      <h2>📊 ตัวอย่าง Dashboard</h2>
+      <p class="highlight">วิเคราะห์ 180 วันที่ผ่านมา → แนวโน้มสินค้า → วางกลยุทธ์ปรับ Stock</p>
+      <a href="https://benja1476.github.io/iStockView---Power-BI/" class="project-link" target="_blank" rel="noopener">🔗 เปิดดู Power BI Project</a>
+      <img src="https://images.unsplash.com/photo-1581090700227-1d1e9c207853?auto=format&fit=crop&w=800&q=80" alt="BI Dashboard" />
+    </section>
+
+    <section>
+      <h2>📈 ข้อมูลที่ใช้สร้างกลยุทธ์ได้เปรียบ</h2>
+      <p>การวิเคราะห์ข้อมูลอย่างมีประสิทธิภาพเริ่มจากการเลือกใช้ข้อมูลที่ถูกต้องและครบถ้วน เพื่อสร้างความได้เปรียบทางธุรกิจอย่างแท้จริง เช่น:</p>
+      <ul>
+        <li>ข้อมูลยอดขายย้อนหลัง — วิเคราะห์แนวโน้มและฤดูกาลตลาด</li>
+        <li>ข้อมูลลูกค้า — ประเภทพฤติกรรมและกลุ่มเป้าหมาย</li>
+        <li>ข้อมูลสต็อกสินค้า — ระดับสต็อกและจังหวะเติมสินค้า</li>
+        <li>ข้อมูลการแข่งขัน — การเคลื่อนไหวของคู่แข่งในตลาด</li>
+        <li>ข้อมูลต้นทุนและกำไร — วิเคราะห์จุดคุ้มทุนและโอกาสเพิ่มกำไร</li>
+        <li>ข้อมูลเทรนด์ตลาดและพฤติกรรมผู้บริโภค — เพื่อปรับกลยุทธ์รวดเร็ว</li>
+        <li>ข้อมูล Social Media & Feedback — เสริมความเข้าใจลูกค้าและแบรนด์</li>
+        <li>ข้อมูลขนส่งและซัพพลายเชน — ลดต้นทุนและเพิ่มประสิทธิภาพ</li>
+      </ul>
+      <p>รวมข้อมูลหลากหลายมุมมองนี้ วิเคราะห์และสังเคราะห์ให้เกิดกลยุทธ์ที่ได้เปรียบและยั่งยืน</p>
+    </section>
+
+    <section>
+      <h2>🎯 กลยุทธ์ที่เรารองรับในหลากหลายอุตสาหกรรม</h2>
+      <ul>
+        <li>📦 วางแผนสต็อกสินค้า (Inventory Optimization)</li>
+        <li>📈 วิเคราะห์ยอดขายและเทรนด์ตลาด (Sales & Market Trends)</li>
+        <li>🧠 คาดการณ์ความต้องการสินค้า (Demand Forecasting)</li>
+        <li>📊 วิเคราะห์ลูกค้า พฤติกรรม และโซนตลาด</li>
+        <li>🛒 วางแผนโปรโมชั่นและแคมเปญที่มีประสิทธิภาพ</li>
+        <li>🏭 บริหารจัดการซัพพลายเชนและโลจิสติกส์</li>
+        <li>💼 วางแผนธุรกิจและกลยุทธ์เชิงลึก</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔧 เครื่องมือและวิธีการที่ใช้</h2>
+      <ul>
+        <li>เขียน Python สำหรับ Backtesting และวิเคราะห์ข้อมูลเชิงลึก</li>
+        <li>เชื่อมต่อและดึงข้อมูลจากฐานข้อมูล, Excel, CSV</li>
+        <li>สร้าง Power BI Dashboard สำหรับรายงานและติดตามผล</li>
+        <li>จัดทำรายงานสรุปเชิงกลยุทธ์ในรูปแบบ HTML หรือ PDF</li>
+        <li>นำเสนอและปรับกลยุทธ์ตามข้อมูลจริงและสถานการณ์ธุรกิจ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📁 สิ่งที่คุณจะได้รับจาก Benja</h2>
+      <div class="card">
+        <strong>📌 สรุปเชิงกลยุทธ์ (Strategy Summary Report)</strong><br>
+        ไฟล์สรุปอ่านง่าย ใช้ประชุมหรือวางแผนได้ทันที
+      </div>
+      <div class="card">
+        <strong>📌 Dashboard ดูผลย้อนหลัง (BI Dashboard)</strong><br>
+        ใช้งานผ่านมือถือหรือคอมฯ เพื่อวางแผนและกำหนด KPI
+      </div>
+      <div class="card">
+        <strong>📌 คำแนะนำจากผู้เชี่ยวชาญ (Analyst Insight)</strong><br>
+        อธิบายวิธีคิดและนำไปใช้กับธุรกิจจริง
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>📬 ติดต่อ Benja</h2>
+      <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
+      <p>Line ID: <strong>ratcha42</strong></p>
+      <a href="https://line.me/ti/p/~ratcha42" class="btn-line" target="_blank" rel="noopener">💬 แชทผ่าน LINE</a>
+      <div style="margin-top: 1rem; text-align:center;">
+        <img src="https://qr-official.line.me/gs/M_090uhbsq_GW.png" alt="QR LINE" width="180" style="border-radius:12px;box-shadow: 0 0 15px #00faff88;" />
+      </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Benja | วิเคราะห์ข้อมูลด้วยใจ สร้างกลยุทธ์ที่ยั่งยืน
+    &copy; 2025 Benja | ใช้ Data เป็นพลังขับเคลื่อน กลยุทธ์ที่เปลี่ยนเกมธุรกิจ สร้างความได้เปรียบอย่างแท้จริง
   </footer>
-
+  
 </body>
 </html>
+
