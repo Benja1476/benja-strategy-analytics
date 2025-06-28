@@ -3,168 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Benja | นักวิเคราะห์กลยุทธ์เชิงข้อมูล</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <title>Benja | นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
-      margin: 0;
       font-family: 'Prompt', sans-serif;
-      background: #0f1624;
+      margin: 0;
+      background-color: #0a0f1c;
       color: #eaf6ff;
-      line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #07182e, #1f4068);
-      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 3rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
       color: #00d8ff;
     }
     header p {
       font-size: 1.2rem;
       color: #cceeff;
+      margin-top: 0.5rem;
     }
     .section {
-      padding: 3rem 1rem;
+      padding: 2.5rem 1.5rem;
       max-width: 960px;
       margin: auto;
     }
     .section h2 {
-      color: #00eaff;
       font-size: 2rem;
+      color: #00eaff;
       margin-bottom: 1rem;
     }
-    .section ul {
+    ul {
       list-style: none;
       padding-left: 0;
     }
-    .section ul li {
-      margin: 1rem 0;
+    ul li {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
       position: relative;
-      padding-left: 30px;
     }
-    .section ul li::before {
-      content: "✔";
+    ul li::before {
+      content: '✔';
       position: absolute;
       left: 0;
-      color: #00eaff;
-      font-weight: bold;
-    }
-    .project a, .contact a {
-      color: #00eaff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .project a:hover, .contact a:hover {
-      color: #00ffff;
-    }
-    .img-preview {
-      display: block;
-      width: 100%;
-      max-width: 720px;
-      margin: 1rem auto;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
-    }
-    .contact p {
-      font-size: 1.1rem;
+      color: #00faff;
     }
     .highlight {
       color: #00faff;
       font-weight: bold;
     }
-    .insight {
-      background: rgba(0, 234, 255, 0.08);
-      border-left: 4px solid #00eaff;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
+    .project img {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+      margin-top: 1rem;
+    }
+    .card {
+      background-color: #121b2d;
+      padding: 1.5rem;
       margin: 1rem 0;
-      font-style: italic;
+      border-left: 4px solid #00d9ff;
+      border-radius: 8px;
+    }
+    .contact a {
+      color: #00eaff;
+      text-decoration: none;
+    }
+    .btn-line {
+      background: #00c300;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0,255,128,0.3);
     }
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 1rem;
       font-size: 0.9rem;
       color: #99ccff;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .section h2 {
-        font-size: 1.5rem;
-      }
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .industry-card {
+      background: #121b2d;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .industry-card:hover {
+      transform: translateY(-8px);
+    }
+    .industry-card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+    .industry-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <h1>Benja</h1>
-    <p>นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง | Strategic Data Analyst</p>
+    <p>นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง | Strategic Insight & Decision Support</p>
   </header>
 
   <section class="section">
-    <h2>🌟 วิสัยทัศน์</h2>
-    <p>“จากข้อมูลในอดีต สู่กลยุทธ์ที่แม่นยำในวันนี้”</p>
-    <div class="insight">วิเคราะห์พฤติกรรมย้อนหลัง เพื่อออกแบบแผนที่ตอบสนองการเปลี่ยนแปลงได้แบบเรียลไทม์</div>
-  </section>
-
-  <section class="section">
-    <h2>🎯 จุดแข็งของ Benja</h2>
+    <h2>🌟 สิ่งที่เราทำ</h2>
     <ul>
-      <li>วิเคราะห์ข้อมูลย้อนหลัง (Backtest) ด้วยแนวคิดล้ำหน้า</li>
-      <li>ดึงเครื่องมือจากวงการเทรดมาประยุกต์กับธุรกิจ</li>
-      <li>มองภาพรวมด้วยแนวคิดเชิงกลยุทธ์และควบคุมความเสี่ยง</li>
-      <li>เข้าใจจังหวะข้อมูลและวางแผนธุรกิจอย่างเป็นระบบ</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>💼 ประเภทงานที่รับ</h2>
-    <ul>
-      <li>วิเคราะห์ยอดขายย้อนหลังเพื่อปรับแผนโปรโมชั่น</li>
-      <li>วางกลยุทธ์จัดการสต๊อกสินค้า</li>
-      <li>พยากรณ์ความต้องการสินค้า (Demand Forecast)</li>
-      <li>สร้าง Dashboard เชิงกลยุทธ์ด้วย Power BI</li>
-      <li>ออกแบบระบบติดตามผลอัตโนมัติรายวัน/รายเดือน</li>
-      <li>แปลงข้อมูลจาก Excel/CSV/ระบบ ให้พร้อมวิเคราะห์</li>
-      <li>ทำงานร่วมกับทีมวางแผน, การตลาด, ฝ่ายบริหาร</li>
+      <li>วิเคราะห์ข้อมูลย้อนหลัง เพื่อสร้างกลยุทธ์ที่ใช้ได้จริง</li>
+      <li>สรุปผลด้วย Power BI แบบ Interactive Dashboard</li>
+      <li>รับข้อมูลจาก Database / Excel / CSV</li>
+      <li>แปลงข้อมูลเป็นบทสรุปเชิงกลยุทธ์</li>
     </ul>
   </section>
 
   <section class="section project">
-    <h2>📊 โปรเจคตัวอย่าง</h2>
-    <a href="https://benja1476.github.io/iStockView---Power-BI/" target="_blank">ดู Power BI Dashboard</a>
-    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" class="img-preview" alt="Project Preview" />
-    <div class="insight">*วิเคราะห์ข้อมูล 180 วันย้อนหลัง เพื่อวางแผนการจัดการสต๊อกสินค้าแบบมีประสิทธิภาพ*</div>
+    <h2>📊 ตัวอย่าง Dashboard</h2>
+    <p class="highlight">วิเคราะห์ 180 วันที่ผ่านมา → แนวโน้มสินค้า → วางกลยุทธ์ปรับ Stock</p>
+    <a href="https://benja1476.github.io/iStockView---Power-BI/" target="_blank">🔗 เปิดดู Power BI Project</a>
+    <img src="https://images.unsplash.com/photo-1581090700227-1d1e9c207853?auto=format&fit=crop&w=800&q=80" alt="BI Dashboard" />
   </section>
 
-  <section class="section contact">
-    <h2>📬 ติดต่อ Benja</h2>
-    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
-    <p><i class="fab fa-line"></i> Line ID: <strong>ratcha42</strong></p>
+  <section class="section">
+    <h2>📁 สิ่งที่คุณจะได้รับ</h2>
+    <div class="card">
+      <strong>📌 สรุปเชิงกลยุทธ์ (Strategy Summary Report)</strong><br>
+      เป็นไฟล์ .HTML หรือ PDF ที่อ่านง่าย สื่อสารจุดสำคัญ และใช้ประชุมได้ทันที
+    </div>
+    <div class="card">
+      <strong>📌 Dashboard ดูผลย้อนหลัง (BI Dashboard)</strong><br>
+      ใช้งานผ่านมือถือ/คอมฯ เพื่อวางแผนรายวัน รายเดือน และกำหนด KPI ได้
+    </div>
+    <div class="card">
+      <strong>📌 คำแนะนำจากผู้เชี่ยวชาญ (Analyst Insight)</strong><br>
+      พร้อมคำอธิบายกลยุทธ์ วิธีคิด และการนำไปใช้กับธุรกิจ
+    </div>
+  </section>
 
-    <div style="margin-top:2rem; text-align: center;">
-      <a href="https://line.me/ti/p/~ratcha42" target="_blank" 
-         style="display: inline-block; background: #00c300; color: white; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,255,0,0.4);">
-        💬 แชทผ่าน LINE
-      </a>
-
-      <div style="margin-top: 1.5rem;">
-        <img src="https://qr-official.line.me/gs/M_090uhbsq_GW.png" alt="LINE QR" width="200" style="border-radius: 8px; box-shadow: 0 0 20px rgba(0, 255, 128, 0.3);" />
-        <p style="margin-top: 0.5rem; color: #99ccff;">สแกนเพื่อเพิ่มเพื่อนใน LINE</p>
+  <section class="section industries">
+    <h2>🌐 รับงานในหลากหลายอุตสาหกรรม</h2>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1131/1131409.png" alt="Marketing" />
+        <p><strong>การตลาด</strong><br>วิเคราะห์พฤติกรรมลูกค้า วางโปรโมชั่นให้แม่นยำ</p>
+      </div>
+      <div class="industry-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Retail" />
+        <p><strong>ค้าปลีก/จัดจำหน่าย</strong><br>วิเคราะห์ยอดขาย - คาดการณ์สินค้า</p>
+      </div>
+      <div class="industry-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2150/2150213.png" alt="Logistics" />
+        <p><strong>โลจิสติกส์</strong><br>วางแผนซัพพลายเชน ลดต้นทุนการกระจายสินค้า</p>
+      </div>
+      <div class="industry-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2872/2872325.png" alt="Healthcare" />
+        <p><strong>สุขภาพ</strong><br>ติดตาม KPI ยา เวชภัณฑ์ และแนวโน้มผู้ป่วย</p>
+      </div>
+      <div class="industry-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3203/3203071.png" alt="Manufacturing" />
+        <p><strong>โรงงาน/ผลิต</strong><br>วางแผนสต๊อกวัตถุดิบ จัดรอบการผลิตอัตโนมัติ</p>
       </div>
     </div>
   </section>
 
+  <section class="section contact">
+    <h2>📬 ติดต่อ Benja</h2>
+    <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
+    <p>Line ID: <strong>ratcha42</strong></p>
+    <a href="https://line.me/ti/p/~ratcha42" class="btn-line" target="_blank">💬 แชทผ่าน LINE</a>
+    <div style="margin-top: 1rem;">
+      <img src="https://qr-official.line.me/gs/M_090uhbsq_GW.png" alt="QR LINE" width="180" />
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 Benja | ข้อมูลคือพลัง กลยุทธ์คือคำตอบ.
+    &copy; 2025 Benja | วิเคราะห์ข้อมูลด้วยใจ สร้างกลยุทธ์ที่ยั่งยืน
   </footer>
+
 </body>
 </html>
