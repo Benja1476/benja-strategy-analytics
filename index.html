@@ -412,6 +412,351 @@
         <strong>📌 Dashboard ดูผลย้อนหลัง (BI Dashboard)</strong><br>
         ใช้งานผ่านมือถือหรือคอมฯ เพื่อวางแผนและกำหนด KPI
       </div>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benja | นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Prompt', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0a182a, #13253f);
+      color: #d0e7ff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: #4de0ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #003c58, #007ea7);
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 0 30px #00cfffaa;
+      border-bottom: 2px solid #00cfff;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #b0f0ff;
+      text-shadow: 0 0 15px #00e0ffbb;
+      margin: 0;
+      font-weight: 700;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      color: #a3d4ffcc;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* Main container */
+    main {
+      max-width: 960px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    /* Section style */
+    section {
+      background: #112339cc;
+      border-radius: 14px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 30px #00cfff33;
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 0 50px #00e0ff88;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      color: #00d8ff;
+      margin-bottom: 1.4rem;
+      text-shadow: 0 0 12px #00cfffaa;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      position: relative;
+      padding-left: 2.2rem;
+      margin-bottom: 1.3rem;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #b8e1ffcc;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+    }
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #00ffffcc;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-shadow: 0 0 6px #00e0ffaa;
+    }
+    ul li:hover {
+      color: #00ffff;
+    }
+
+    /* Highlight text */
+    .highlight {
+      color: #00faff;
+      font-weight: 700;
+      text-shadow: 0 0 8px #00d8ffbb;
+    }
+
+    /* Project section */
+    .project a {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .project img {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 16px;
+      box-shadow: 0 0 40px #00d8ffaa;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px #00ffffdd;
+    }
+
+    /* Card style */
+    .card {
+      background-color: #0a2039;
+      border-left: 6px solid #00c8ff;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.6rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      color: #a9d4ffdd;
+      box-shadow: 0 0 25px #00bfff55;
+      transition: background-color 0.3s ease;
+    }
+    .card:hover {
+      background-color: #123355;
+    }
+    .card strong {
+      color: #00e0ff;
+      font-weight: 700;
+    }
+
+    /* Contact section */
+    .contact a {
+      color: #00d8ff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .btn-line {
+      background: #00c300;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 0 25px #00ff0088;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-line:hover {
+      background: #00ff00;
+      box-shadow: 0 0 35px #00ff00cc;
+    }
+    .contact img {
+      margin-top: 1.2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px #00ffff88;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 180px;
+    }
+
+    /* Industry Grid */
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .industry-card {
+      background: #0c1a33cc;
+      border-radius: 16px;
+      padding: 1.6rem 1.2rem;
+      box-shadow: 0 0 25px #00d8ff44;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .industry-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 45px #00e0ffaa;
+    }
+    .industry-card img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 3px #00cfffbb);
+    }
+    .industry-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #b0dfffcc;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      font-size: 1rem;
+      color: #88bbffaa;
+      border-top: 1px solid #00d8ff33;
+      user-select: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+      ul li, .card {
+        font-size: 1rem;
+      }
+      .industry-card img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Benja</h1>
+    <p>นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง | Strategic Insight & Decision Support</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌟 สิ่งที่เราทำ</h2>
+      <ul>
+        <li>วิเคราะห์ข้อมูลย้อนหลัง เพื่อสร้างกลยุทธ์ที่ใช้ได้จริงในธุรกิจ</li>
+        <li>ใช้ Python และเครื่องมือ Backtest แบบมืออาชีพ</li>
+        <li>รับข้อมูลจาก Database, Excel, CSV เพื่อนำมาวิเคราะห์</li>
+        <li>สรุปผลและนำเสนอด้วย Power BI แบบ Interactive Dashboard</li>
+        <li>แปลงข้อมูลเป็นบทสรุปเชิงกลยุทธ์ที่เข้าใจง่าย</li>
+      </ul>
+    </section>
+
+    <section class="project">
+      <h2>📊 ตัวอย่าง Dashboard</h2>
+      <p class="highlight">วิเคราะห์ 180 วันที่ผ่านมา → แนวโน้มสินค้า → วางกลยุทธ์ปรับ Stock</p>
+      <a href="https://benja1476.github.io/iStockView---Power-BI/" class="project-link" target="_blank" rel="noopener">🔗 เปิดดู Power BI Project</a>
+      <img src="https://images.unsplash.com/photo-1581090700227-1d1e9c207853?auto=format&fit=crop&w=900&q=80" alt="BI Dashboard" />
+    </section>
+
+    <section>
+      <h2>📈 ข้อมูลที่ใช้สร้างกลยุทธ์ได้เปรียบ</h2>
+      <p>การวิเคราะห์ข้อมูลอย่างมีประสิทธิภาพเริ่มจากการเลือกใช้ข้อมูลที่ถูกต้องและครบถ้วน เพื่อสร้างความได้เปรียบทางธุรกิจอย่างแท้จริง เช่น:</p>
+      <ul>
+        <li>ข้อมูลยอดขายย้อนหลัง — วิเคราะห์แนวโน้มและฤดูกาลตลาด</li>
+        <li>ข้อมูลลูกค้า — ประเภทพฤติกรรมและกลุ่มเป้าหมาย</li>
+        <li>ข้อมูลสต็อกสินค้า — ระดับสต็อกและจังหวะเติมสินค้า</li>
+        <li>ข้อมูลการแข่งขัน — การเคลื่อนไหวของคู่แข่งในตลาด</li>
+        <li>ข้อมูลต้นทุนและกำไร — วิเคราะห์จุดคุ้มทุนและโอกาสเพิ่มกำไร</li>
+        <li>ข้อมูลเทรนด์ตลาดและพฤติกรรมผู้บริโภค — เพื่อปรับกลยุทธ์รวดเร็ว</li>
+        <li>ข้อมูล Social Media & Feedback — เสริมความเข้าใจลูกค้าและแบรนด์</li>
+        <li>ข้อมูลขนส่งและซัพพลายเชน — ลดต้นทุนและเพิ่มประสิทธิภาพ</li>
+      </ul>
+      <p>รวมข้อมูลหลากหลายมุมมองนี้ วิเคราะห์และสังเคราะห์ให้เกิดกลยุทธ์ที่ได้เปรียบและยั่งยืน</p>
+    </section>
+
+    <section>
+      <h2>🎯 กลยุทธ์ที่เรารองรับในหลากหลายอุตสาหกรรม</h2>
+      <div class="industry-grid">
+        <div class="industry-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1131/1131409.png" alt="Marketing" />
+          <p><strong>การตลาด</strong><br>วิเคราะห์พฤติกรรมลูกค้า วางโปรโมชั่นให้แม่นยำ</p>
+        </div>
+        <div class="industry-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Retail" />
+          <p><strong>ค้าปลีก/จัดจำหน่าย</strong><br>วิเคราะห์ยอดขาย - คาดการณ์สินค้า</p>
+        </div>
+        <div class="industry-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2150/2150213.png" alt="Logistics" />
+          <p><strong>โลจิสติกส์</strong><br>วางแผนซัพพลายเชน ลดต้นทุนการกระจายสินค้า</p>
+        </div>
+        <div class="industry-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2872/2872325.png" alt="Healthcare" />
+          <p><strong>สุขภาพ</strong><br>ติดตาม KPI ยา เวชภัณฑ์ และแนวโน้มผู้ป่วย</p>
+        </div>
+        <div class="industry-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/260/260751.png" alt="Business" />
+          <p><strong>ธุรกิจ</strong><br>วางแผนกลยุทธ์เชิงลึกและการเติบโต</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🔧 เครื่องมือและวิธีการที่ใช้</h2>
+      <ul>
+        <li>เขียน Python สำหรับ Backtesting และวิเคราะห์ข้อมูลเชิงลึก</li>
+        <li>เชื่อมต่อและดึงข้อมูลจากฐานข้อมูล, Excel, CSV</li>
+        <li>สร้าง Power BI Dashboard สำหรับรายงานและติดตามผล</li>
+        <li>จัดทำรายงานสรุปเชิงกลยุทธ์ในรูปแบบ HTML หรือ PDF</li>
+        <li>นำเสนอและปรับกลยุทธ์ตามข้อมูลจริงและสถานการณ์ธุรกิจ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📁 สิ่งที่คุณจะได้รับจาก Benja</h2>
+      <div class="card">
+        <strong>📌 สรุปเชิงกลยุทธ์ (Strategy Summary Report)</strong><br>
+        ไฟล์สรุปอ่านง่าย ใช้ประชุมหรือวางแผนได้ทันที
+      </div>
+      <div class="card">
+        <strong>📌 Dashboard ดูผลย้อนหลัง (BI Dashboard)</strong><br>
+        ใช้งานผ่านมือถือหรือคอมฯ เพื่อวางแผนและกำหนด KPI
+      </div>
       <div class="card">
         <strong>📌 คำแนะนำจากผู้เชี่ยวชาญ (Analyst Insight)</strong><br>
         อธิบายวิธีคิดและนำไปใช้กับธุรกิจจริง
@@ -423,9 +768,7 @@
       <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
       <p>Line ID: <strong>ratcha42</strong></p>
       <a href="https://line.me/ti/p/~ratcha42" class="btn-line" target="_blank" rel="noopener">💬 แชทผ่าน LINE</a>
-      <div style="margin-top: 1rem; text-align:center;">
-        <img src="https://qr-official.line.me/gs/M_090uhbsq_GW.png" alt="QR LINE" width="180" style="border-radius:12px;box-shadow: 0 0 15px #00faff88;" />
-      </div>
+      <img src="https://qr-official.line.me/gs/M_090uhbsq_GW.png" alt="QR LINE" />
     </section>
   </main>
 
