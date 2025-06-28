@@ -3,548 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Benja - นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Prompt&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pVnO8m19IyU8/tz+oCyzsv7E0BOlV2MjK5z8WldfQDx9dGfV2Jw9EGyZ3/4d9ZkHfy2tLVv0k9k7Yb2dl+3Kag=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <title>Benja | Strategic Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Kanit', 'Prompt', sans-serif;
-      background: linear-gradient(135deg, #00122f 0%, #003a72 100%);
-      color: #e6f0ff;
       margin: 0;
-      padding: 1rem 1.5rem;
+      font-family: 'Prompt', sans-serif;
+      background: #0f1624;
+      color: #eaf6ff;
       line-height: 1.6;
     }
-    a {
-      color: #42d1ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    header {
+      background: linear-gradient(135deg, #07182e, #1f4068);
+      padding: 4rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
-    a:hover {
-      color: #1b9ed1;
-      text-decoration: underline;
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: #00d8ff;
     }
-
-    header, section, footer {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem 2.5rem;
-      background: rgba(10, 25, 50, 0.8);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(66, 209, 255, 0.3);
-      border: 1.5px solid rgba(66, 209, 255, 0.25);
-      transition: box-shadow 0.3s ease;
-    }
-    header:hover, section:hover, footer:hover {
-      box-shadow: 0 0 40px rgba(66, 209, 255, 0.6);
-    }
-
-    h1, h2 {
-      color: #00d9ff;
-      margin-bottom: 1rem;
-      position: relative;
-      font-weight: 900;
-      text-shadow: 0 0 12px #00baffcc;
-    }
-    h1::after, h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: #00d9ff;
-      border-radius: 2px;
-      margin-top: 6px;
-      box-shadow: 0 0 8px #00baffcc;
-    }
-
-    h3 {
-      color: #8ec5fc;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 1.15rem;
-      margin-bottom: 1.2rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    ul li {
-      position: relative;
-      padding-left: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: #b8dbff;
-      cursor: default;
-      transition: color 0.3s ease;
-    }
-    ul li:hover {
-      color: #00e6ff;
-    }
-    ul li::before {
-      content: "\f00c"; /* FontAwesome check icon */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #00d9ff;
+    header p {
       font-size: 1.2rem;
-      line-height: 1;
+      color: #cceeff;
     }
-
-    .highlight {
+    .section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    .section h2 {
       color: #00eaff;
-      font-weight: 900;
-      text-shadow: 0 0 12px #00eaffcc;
-    }
-
-    .subtitle {
-      font-style: italic;
-      color: #88ccff;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.2rem;
-      letter-spacing: 0.04em;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 1.5rem auto 2rem;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0, 217, 255, 0.45);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(0, 217, 255, 0.7);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #00caff;
-      margin-bottom: 2rem;
-      letter-spacing: 0.06em;
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      body {
-        padding: 1rem 1rem;
-      }
-      header, section, footer {
-        padding: 1.5rem 1.5rem;
-        margin: 1.2rem auto;
-      }
-      h1 {
-        font-size: 2.4rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      p, ul li {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Benja <i class="fa-solid fa-chart-line"></i></h1>
-  <p class="highlight">นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</p>
-  <p class="subtitle">วางแผนและตัดสินใจด้วยข้อมูลจริง</p>
-</header>
-
-<section>
-  <h2>วิสัยทัศน์ของฉัน <i class="fa-solid fa-eye"></i></h2>
-  <p class="highlight">วิเคราะห์ – ทดสอบ – วางกลยุทธ์</p>
-  <p>“จากข้อมูลอดีต สู่การตัดสินใจธุรกิจที่แม่นยำ”</p>
-</section>
-
-<section>
-  <h2>แนวคิดหลัก <i class="fa-solid fa-lightbulb"></i></h2>
-  <ul>
-    <li>ใช้ข้อมูลย้อนหลังเพื่อค้นหา <span class="highlight">Insight ที่ลึกซึ้ง</span></li>
-    <li>สร้างและทดสอบ <span class="highlight">กลยุทธ์เชิงธุรกิจ</span></li>
-    <li>ปรับแผนงานตามความเปลี่ยนแปลงของตลาด</li>
-    <li>ช่วยลูกค้าควบคุมการตัดสินใจให้แม่นยำและยั่งยืน</li>
-  </ul>
-</section>
-
-<section>
-  <h2>การประยุกต์ใช้ในหลายอุตสาหกรรม <i class="fa-solid fa-industry"></i></h2>
-  <ul>
-    <li>การตลาดและวางแผนธุรกิจ</li>
-    <li>การบริหารจัดการทรัพยากร</li>
-    <li>การวิเคราะห์ลูกค้าและพฤติกรรม</li>
-    <li>การจัดการโลจิสติกส์และซัพพลายเชน</li>
-    <li>การวางแผนยอดขายและโปรโมชั่น</li>
-  </ul>
-</section>
-
-<section>
-  <h2>ตัวอย่างผลงานวิเคราะห์ข้อมูลย้อนหลัง <i class="fa-solid fa-chart-pie"></i></h2>
-  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Performance Chart" />
-  <p class="highlight">วิเคราะห์ข้อมูลย้อนหลัง 180 วัน</p>
-  <p>พบ Insight ช่วยวางแผนและเพิ่มประสิทธิภาพธุรกิจ</p>
-</section>
-
-<section>
-  <h2>โปรเจคเชิงกลยุทธ์ <i class="fa-solid fa-project-diagram"></i></h2>
-  <p>สามารถดูตัวอย่างโปรเจค Power BI ได้ที่:</p>
-  <p><a href="https://benja1476.github.io/iStockView---Power-BI/" class="project-link" target="_blank" rel="noopener">https://benja1476.github.io/iStockView---Power-BI/</a></p>
-</section>
-
-<section>
-  <h2>บริการของ Benja <i class="fa-solid fa-handshake"></i></h2>
-  <ul>
-    <li>วิเคราะห์ข้อมูลย้อนหลังอย่างลึกซึ้ง (Backtest)</li>
-    <li>ออกแบบกลยุทธ์เชิงธุรกิจและรายงาน</li>
-    <li>สร้าง Dashboard สำหรับติดตามผลแบบเรียลไทม์</li>
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Benja - นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;900&family=Prompt&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
-  <style>
-    /* ===== Reset and Base ===== */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body, html {
-      height: 100%;
-      font-family: 'Kanit', 'Prompt', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #e0f7ff;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    /* ===== Background animated particles ===== */
-    @keyframes moveBG {
-      0% {background-position: 0 0;}
-      100% {background-position: 1000px 500px;}
-    }
-    body {
-      background-image:
-        radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(0,128,255,0.1), transparent 70%);
-      animation: moveBG 100s linear infinite;
-    }
-
-    /* ===== Container ===== */
-    .container {
-      max-width: 900px;
-      margin: 2rem auto 3rem auto;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    /* ===== Section Card ===== */
-    section.card {
-      background: rgba(10, 30, 50, 0.85);
-      border-radius: 18px;
-      box-shadow:
-        0 0 10px #00f0ff44,
-        0 0 20px #00aaff88,
-        inset 0 0 15px #00eaff55;
-      padding: 2.5rem 3rem;
-      border: 2px solid #00cfffaa;
-      backdrop-filter: blur(6px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-    section.card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow:
-        0 0 30px #00f7ffcc,
-        0 0 50px #00cfffcc,
-        inset 0 0 30px #00f0ffbb;
-      cursor: default;
-    }
-
-    /* ===== Headers ===== */
-    h1, h2 {
-      font-weight: 900;
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaffbb;
-      position: relative;
-      letter-spacing: 0.06em;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
-    h1 {
-      font-size: 3.2rem;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    h1 i {
-      margin-left: 0.5rem;
-      color: #00ffff;
-      text-shadow: 0 0 15px #00ffffdd;
-      animation: glowPulse 2.5s infinite alternate;
-    }
-    @keyframes glowPulse {
-      from {text-shadow: 0 0 15px #00ffffdd;}
-      to {text-shadow: 0 0 30px #00ffffee;}
-    }
-
-    h2 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 3px solid #00cfff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    h2 i {
-      font-size: 1.8rem;
-      color: #00d4ffcc;
-      text-shadow: 0 0 8px #00d4ffbb;
-    }
-
-    /* ===== Paragraphs and lists ===== */
-    p {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-      color: #c0e8ffcc;
-      text-shadow: 0 0 4px #0077aa44;
-    }
-
-    ul {
+    .section ul {
       list-style: none;
       padding-left: 0;
-      margin-top: 1rem;
-      color: #9dd8ffcc;
     }
-    ul li {
+    .section ul li {
+      margin: 1rem 0;
       position: relative;
-      padding-left: 2.8rem;
-      margin-bottom: 1.3rem;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: default;
-      transition: color 0.3s ease;
+      padding-left: 30px;
     }
-    ul li::before {
-      content: "\f00c"; /* FontAwesome check */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
+    .section ul li::before {
+      content: "✔";
       position: absolute;
       left: 0;
-      top: 2px;
-      color: #00eaffcc;
-      font-size: 1.3rem;
-      text-shadow: 0 0 6px #00eaffaa;
+      color: #00eaff;
+      font-weight: bold;
     }
-    ul li:hover {
-      color: #00ffffdd;
-    }
-
-    /* ===== Images ===== */
-    img {
-      display: block;
-      max-width: 100%;
-      border-radius: 20px;
-      margin: 1.5rem auto 2rem;
-      box-shadow:
-        0 5px 20px #00eaff88,
-        0 10px 30px #00aaff99;
-      cursor: pointer;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    img:hover {
-      transform: scale(1.07);
-      box-shadow:
-        0 10px 40px #00ffffcc,
-        0 20px 60px #00d4ffcc;
-    }
-
-    /* ===== Buttons ===== */
-    .btn-contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: #00b4ff;
-      padding: 0.9rem 1.8rem;
-      border-radius: 40px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #001f33;
-      box-shadow: 0 0 10px #00d9ffcc;
+    .project a, .contact a {
+      color: #00eaff;
       text-decoration: none;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin-top: 1rem;
-      user-select: none;
+      font-weight: bold;
     }
-    .btn-contact:hover {
-      background: #00e0ff;
-      box-shadow: 0 0 25px #00ffffcc;
-      color: #003045;
+    .project a:hover, .contact a:hover {
+      color: #00ffff;
     }
-    .btn-contact i {
-      font-size: 1.4rem;
-      color: #001f33;
-      text-shadow: 0 0 3px #00000055;
+    .img-preview {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
     }
-
-    /* ===== Footer ===== */
+    .contact p {
+      font-size: 1.1rem;
+    }
     footer {
       text-align: center;
-      margin: 3rem auto 1.5rem auto;
-      font-weight: 600;
-      color: #00e0ffcc;
-      text-shadow: 0 0 10px #00c0ff99;
-      font-size: 1.2rem;
-      letter-spacing: 0.1em;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #99ccff;
     }
-    footer i {
-      color: #ff3399cc;
-      text-shadow: 0 0 15px #ff3399cc;
-      animation: glowPulse 3s infinite alternate;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 720px) {
-      h1 {
-        font-size: 2.6rem;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
       }
-      h2 {
-        font-size: 1.9rem;
-      }
-      p, ul li {
-        font-size: 1rem;
-      }
-      section.card {
-        padding: 2rem 1.5rem;
+      .section h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <h1>Benja</h1>
+    <p>นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง | Strategic Analyst</p>
+  </header>
 
-  <div class="container">
+  <section class="section">
+    <h2>🌟 วิสัยทัศน์</h2>
+    <p>"จากข้อมูลในอดีต สู่กลยุทธ์ที่แม่นยำในวันนี้"</p>
+  </section>
 
-    <header>
-      <h1>Benja <i class="fa-solid fa-chart-line"></i></h1>
-      <p class="highlight" style="text-align:center; font-size:1.5rem; margin-top:0.2rem;">นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</p>
-      <p class="subtitle">วางแผนและตัดสินใจด้วยข้อมูลจริง</p>
-    </header>
+  <section class="section">
+    <h2>📊 สิ่งที่ Benja ทำ</h2>
+    <ul>
+      <li>วิเคราะห์ข้อมูลย้อนหลังเพื่อค้นหา Insight ลึกซึ้ง</li>
+      <li>ทดสอบกลยุทธ์เชิงธุรกิจ (Backtest)</li>
+      <li>สร้าง Dashboard และรายงานวางแผนกลยุทธ์</li>
+      <li>ประยุกต์ใช้กับอุตสาหกรรมหลากหลาย</li>
+    </ul>
+  </section>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-eye"></i> วิสัยทัศน์ของฉัน</h2>
-      <p class="highlight">วิเคราะห์ – ทดสอบ – วางกลยุทธ์</p>
-      <p>“จากข้อมูลอดีต สู่การตัดสินใจธุรกิจที่แม่นยำ”</p>
-    </section>
+  <section class="section project">
+    <h2>🧠 ตัวอย่างผลงาน</h2>
+    <a href="https://benja1476.github.io/iStockView---Power-BI/" target="_blank">ดูโปรเจค Power BI</a>
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" class="img-preview" alt="Project Preview" />
+  </section>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-lightbulb"></i> แนวคิดหลัก</h2>
-      <ul>
-        <li>ใช้ข้อมูลย้อนหลังเพื่อค้นหา <span class="highlight">Insight ที่ลึกซึ้ง</span></li>
-        <li>สร้างและทดสอบ <span class="highlight">กลยุทธ์เชิงธุรกิจ</span></li>
-        <li>ปรับแผนงานตามความเปลี่ยนแปลงของตลาด</li>
-        <li>ช่วยลูกค้าควบคุมการตัดสินใจให้แม่นยำและยั่งยืน</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2><i class="fa-solid fa-industry"></i> การประยุกต์ใช้ในหลายอุตสาหกรรม</h2>
-      <ul>
-        <li>การตลาดและวางแผนธุรกิจ</li>
-        <li>การบริหารจัดการทรัพยากร</li>
-        <li>การวิเคราะห์ลูกค้าและพฤติกรรม</li>
-        <li>การจัดการโลจิสติกส์และซัพพลายเชน</li>
-        <li>การวางแผนยอดขายและโปรโมชั่น</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2><i class="fa-solid fa-chart-pie"></i> ตัวอย่างผลงานวิเคราะห์ข้อมูลย้อนหลัง</h2>
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Performance Chart" />
-      <p class="highlight">วิเคราะห์ข้อมูลย้อนหลัง 180 วัน</p>
-      <p>พบ Insight ช่วยวางแผนและเพิ่มประสิทธิภาพธุรกิจ</p>
-    </section>
-
-    <section class="card">
-      <h2><i class="fa-solid fa-project-diagram"></i> โปรเจคเชิงกลยุทธ์</h2>
-      <p>สามารถดูตัวอย่างโปรเจค Power BI ได้ที่:</p>
-      <p><a href="https://benja1476.github.io/iStockView---Power-BI/" target="_blank" rel="noopener" class="highlight">https://benja1476.github.io/iStockView---Power-BI/</a></p>
-    </section>
-
-    <section class="card">
-      <h2><i class="fa-solid fa-handshake"></i> บริการของ Benja</h2>
-      <ul>
-        <li>วิเคราะห์ข้อมูลย้อนหลังอย่างลึกซึ้ง (Backtest)</li>
-        <li>ออกแบบกลยุทธ์เชิงธุรกิจและรายงาน</li>
-        <li>สร้าง Dashboard สำหรับติดตามผลแบบเรียลไทม์</li>
-        <li>ปรับกลยุทธ์ตามข้อมูลและสถานการณ์จริง</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2><i class="fa-solid fa-thumbs-up"></i> ทำไมต้องเลือก Benja</h2>
-      <p>เพราะ Benja คือผู้ช่วยธุรกิจที่เชื่อถือได้</p>
-      <p>ทุกกลยุทธ์เกิดจากข้อมูลจริงและการวิเคราะห์อย่างมีระบบ</p>
-    </section>
-
-    <section class="card" style="text-align:center;">
-      <h2><i class="fa-solid fa-envelope"></i> ติดต่อ Benja</h2>
-      <p>พร้อมร่วมงานและสร้างความสำเร็จด้วยข้อมูล</p>
-      <a href="mailto:benjaja60@gmail.com" class="btn-contact" target="_blank" rel="noopener">
-        <i class="fa-solid fa-envelope"></i> benjaja60@gmail.com
-      </a><br/>
-      <a href="https://line.me/R/ti/p/@ratcha42" class="btn-contact" target="_blank" rel="noopener" style="margin-top:1rem;">
-        <i class="fa-brands fa-line"></i> @ratcha42
-      </a>
-    </section>
-
-  </div>
+  <section class="section contact">
+    <h2>📬 ติดต่อ Benja</h2>
+    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
+    <p><i class="fab fa-line"></i> Line ID: <strong>ratcha42</strong></p>
+  </section>
 
   <footer>
-    <p>ขอบคุณค่ะ <i class="fa-solid fa-heart"></i></p>
-    <p class="highlight">Data is Power | Strategy is Key</p>
+    &copy; 2025 Benja | Data-Driven Strategy for the Future
   </footer>
-
 </body>
 </html>
-
