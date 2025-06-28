@@ -226,27 +226,325 @@
     <li>วิเคราะห์ข้อมูลย้อนหลังอย่างลึกซึ้ง (Backtest)</li>
     <li>ออกแบบกลยุทธ์เชิงธุรกิจและรายงาน</li>
     <li>สร้าง Dashboard สำหรับติดตามผลแบบเรียลไทม์</li>
-    <li>ปรับกลยุทธ์ตามข้อมูลและสถานการณ์จริง</li>
-  </ul>
-</section>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benja - นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</title>
 
-<section>
-  <h2>ทำไมต้องเลือก Benja <i class="fa-solid fa-thumbs-up"></i></h2>
-  <p>เพราะ Benja คือผู้ช่วยธุรกิจที่เชื่อถือได้</p>
-  <p>ทุกกลยุทธ์เกิดจากข้อมูลจริงและการวิเคราะห์อย่างมีระบบ</p>
-</section>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;900&family=Prompt&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-<section>
-  <h2>ติดต่อ Benja <i class="fa-solid fa-envelope"></i></h2>
-  <p>พร้อมร่วมงานและสร้างความสำเร็จด้วยข้อมูล</p>
-  <p>Email: <strong>benjaja60@gmail.com</strong></p>
-  <p>Line ID: <strong>@ratcha42</strong></p>
-</section>
+  <style>
+    /* ===== Reset and Base ===== */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Kanit', 'Prompt', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0f7ff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* ===== Background animated particles ===== */
+    @keyframes moveBG {
+      0% {background-position: 0 0;}
+      100% {background-position: 1000px 500px;}
+    }
+    body {
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(0,128,255,0.1), transparent 70%);
+      animation: moveBG 100s linear infinite;
+    }
 
-<footer>
-  <p>ขอบคุณค่ะ <i class="fa-solid fa-heart"></i></p>
-  <p class="highlight">Data is Power | Strategy is Key</p>
-</footer>
+    /* ===== Container ===== */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto 3rem auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ===== Section Card ===== */
+    section.card {
+      background: rgba(10, 30, 50, 0.85);
+      border-radius: 18px;
+      box-shadow:
+        0 0 10px #00f0ff44,
+        0 0 20px #00aaff88,
+        inset 0 0 15px #00eaff55;
+      padding: 2.5rem 3rem;
+      border: 2px solid #00cfffaa;
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    section.card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow:
+        0 0 30px #00f7ffcc,
+        0 0 50px #00cfffcc,
+        inset 0 0 30px #00f0ffbb;
+      cursor: default;
+    }
+
+    /* ===== Headers ===== */
+    h1, h2 {
+      font-weight: 900;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaffbb;
+      position: relative;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3.2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    h1 i {
+      margin-left: 0.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffffdd;
+      animation: glowPulse 2.5s infinite alternate;
+    }
+    @keyframes glowPulse {
+      from {text-shadow: 0 0 15px #00ffffdd;}
+      to {text-shadow: 0 0 30px #00ffffee;}
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #00cfff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h2 i {
+      font-size: 1.8rem;
+      color: #00d4ffcc;
+      text-shadow: 0 0 8px #00d4ffbb;
+    }
+
+    /* ===== Paragraphs and lists ===== */
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      color: #c0e8ffcc;
+      text-shadow: 0 0 4px #0077aa44;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+      color: #9dd8ffcc;
+    }
+    ul li {
+      position: relative;
+      padding-left: 2.8rem;
+      margin-bottom: 1.3rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: default;
+      transition: color 0.3s ease;
+    }
+    ul li::before {
+      content: "\f00c"; /* FontAwesome check */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #00eaffcc;
+      font-size: 1.3rem;
+      text-shadow: 0 0 6px #00eaffaa;
+    }
+    ul li:hover {
+      color: #00ffffdd;
+    }
+
+    /* ===== Images ===== */
+    img {
+      display: block;
+      max-width: 100%;
+      border-radius: 20px;
+      margin: 1.5rem auto 2rem;
+      box-shadow:
+        0 5px 20px #00eaff88,
+        0 10px 30px #00aaff99;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    img:hover {
+      transform: scale(1.07);
+      box-shadow:
+        0 10px 40px #00ffffcc,
+        0 20px 60px #00d4ffcc;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #00b4ff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 40px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #001f33;
+      box-shadow: 0 0 10px #00d9ffcc;
+      text-decoration: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 1rem;
+      user-select: none;
+    }
+    .btn-contact:hover {
+      background: #00e0ff;
+      box-shadow: 0 0 25px #00ffffcc;
+      color: #003045;
+    }
+    .btn-contact i {
+      font-size: 1.4rem;
+      color: #001f33;
+      text-shadow: 0 0 3px #00000055;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      margin: 3rem auto 1.5rem auto;
+      font-weight: 600;
+      color: #00e0ffcc;
+      text-shadow: 0 0 10px #00c0ff99;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+    footer i {
+      color: #ff3399cc;
+      text-shadow: 0 0 15px #ff3399cc;
+      animation: glowPulse 3s infinite alternate;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 720px) {
+      h1 {
+        font-size: 2.6rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+      }
+      p, ul li {
+        font-size: 1rem;
+      }
+      section.card {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Benja <i class="fa-solid fa-chart-line"></i></h1>
+      <p class="highlight" style="text-align:center; font-size:1.5rem; margin-top:0.2rem;">นักวิเคราะห์กลยุทธ์ข้อมูลย้อนหลัง</p>
+      <p class="subtitle">วางแผนและตัดสินใจด้วยข้อมูลจริง</p>
+    </header>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-eye"></i> วิสัยทัศน์ของฉัน</h2>
+      <p class="highlight">วิเคราะห์ – ทดสอบ – วางกลยุทธ์</p>
+      <p>“จากข้อมูลอดีต สู่การตัดสินใจธุรกิจที่แม่นยำ”</p>
+    </section>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-lightbulb"></i> แนวคิดหลัก</h2>
+      <ul>
+        <li>ใช้ข้อมูลย้อนหลังเพื่อค้นหา <span class="highlight">Insight ที่ลึกซึ้ง</span></li>
+        <li>สร้างและทดสอบ <span class="highlight">กลยุทธ์เชิงธุรกิจ</span></li>
+        <li>ปรับแผนงานตามความเปลี่ยนแปลงของตลาด</li>
+        <li>ช่วยลูกค้าควบคุมการตัดสินใจให้แม่นยำและยั่งยืน</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-industry"></i> การประยุกต์ใช้ในหลายอุตสาหกรรม</h2>
+      <ul>
+        <li>การตลาดและวางแผนธุรกิจ</li>
+        <li>การบริหารจัดการทรัพยากร</li>
+        <li>การวิเคราะห์ลูกค้าและพฤติกรรม</li>
+        <li>การจัดการโลจิสติกส์และซัพพลายเชน</li>
+        <li>การวางแผนยอดขายและโปรโมชั่น</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-chart-pie"></i> ตัวอย่างผลงานวิเคราะห์ข้อมูลย้อนหลัง</h2>
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Performance Chart" />
+      <p class="highlight">วิเคราะห์ข้อมูลย้อนหลัง 180 วัน</p>
+      <p>พบ Insight ช่วยวางแผนและเพิ่มประสิทธิภาพธุรกิจ</p>
+    </section>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-project-diagram"></i> โปรเจคเชิงกลยุทธ์</h2>
+      <p>สามารถดูตัวอย่างโปรเจค Power BI ได้ที่:</p>
+      <p><a href="https://benja1476.github.io/iStockView---Power-BI/" target="_blank" rel="noopener" class="highlight">https://benja1476.github.io/iStockView---Power-BI/</a></p>
+    </section>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-handshake"></i> บริการของ Benja</h2>
+      <ul>
+        <li>วิเคราะห์ข้อมูลย้อนหลังอย่างลึกซึ้ง (Backtest)</li>
+        <li>ออกแบบกลยุทธ์เชิงธุรกิจและรายงาน</li>
+        <li>สร้าง Dashboard สำหรับติดตามผลแบบเรียลไทม์</li>
+        <li>ปรับกลยุทธ์ตามข้อมูลและสถานการณ์จริง</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><i class="fa-solid fa-thumbs-up"></i> ทำไมต้องเลือก Benja</h2>
+      <p>เพราะ Benja คือผู้ช่วยธุรกิจที่เชื่อถือได้</p>
+      <p>ทุกกลยุทธ์เกิดจากข้อมูลจริงและการวิเคราะห์อย่างมีระบบ</p>
+    </section>
+
+    <section class="card" style="text-align:center;">
+      <h2><i class="fa-solid fa-envelope"></i> ติดต่อ Benja</h2>
+      <p>พร้อมร่วมงานและสร้างความสำเร็จด้วยข้อมูล</p>
+      <a href="mailto:benjaja60@gmail.com" class="btn-contact" target="_blank" rel="noopener">
+        <i class="fa-solid fa-envelope"></i> benjaja60@gmail.com
+      </a><br/>
+      <a href="https://line.me/R/ti/p/@ratcha42" class="btn-contact" target="_blank" rel="noopener" style="margin-top:1rem;">
+        <i class="fa-brands fa-line"></i> @ratcha42
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>ขอบคุณค่ะ <i class="fa-solid fa-heart"></i></p>
+    <p class="highlight">Data is Power | Strategy is Key</p>
+  </footer>
 
 </body>
 </html>
+
