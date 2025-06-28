@@ -3,63 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Benja | ที่ปรึกษากลยุทธ์ข้อมูล & BI Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Benja | กลยุทธ์ที่คนส่วนน้อยเข้าใจ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Sarabun', sans-serif;
       margin: 0;
-      background-color: #f9fbfd;
-      color: #2d3a4a;
-      line-height: 1.7;
+      font-family: 'Kanit', sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #1c2e4a, #26425c);
-      color: #ffffff;
-      padding: 2.5rem 1rem;
+      background: radial-gradient(circle at center, #000 0%, #111a22 100%);
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      padding: 2.5rem 1rem;
     }
 
     header h1 {
       font-size: 2.6rem;
-      margin: 0;
+      color: #00ffaa;
+      text-shadow: 0 0 10px #00ffaa88;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      color: #ccc;
       margin-top: 0.5rem;
+      font-style: italic;
     }
 
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .quote {
+      background-color: #141e27;
+      padding: 1.5rem;
+      margin: 1.5rem 1rem;
+      border-left: 5px solid #00ffaa;
+      font-size: 1.05rem;
+      color: #d0fefc;
+      box-shadow: 0 0 15px rgba(0,255,170,0.1);
     }
 
     section {
-      margin-bottom: 2.5rem;
+      background: #111;
+      margin: 1.2rem 1rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,255,170,0.06);
     }
 
     h2 {
-      color: #1f3556;
-      font-size: 1.8rem;
+      color: #00ffaa;
+      border-left: 4px solid #00ffaa;
+      padding-left: 1rem;
       margin-bottom: 1rem;
-      border-left: 5px solid #3ca5f6;
-      padding-left: 0.6rem;
+      font-size: 1.4rem;
     }
 
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1rem;
     }
 
     ul li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      list-style-type: '✔ ';
+      color: #cceeff;
+    }
+
+    p, li {
+      font-size: 1rem;
     }
 
     a {
-      color: #007acc;
+      color: #00ffaa;
       text-decoration: none;
       font-weight: bold;
     }
@@ -70,210 +89,29 @@
 
     footer {
       text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.95rem;
-      background-color: #f0f4f8;
-      color: #5f7891;
-    }
-
-    .btn-contact {
-      background-color: #007acc;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .btn-contact:hover {
-      background-color: #005fa3;
-    }
-
-    .project img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 1rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .card {
-      background: #e8f1fb;
       padding: 1.2rem;
-      border-left: 5px solid #007acc;
-      border-radius: 8px;
-      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      background-color: #0c0c0c;
+      color: #888;
     }
 
-    .qr-line {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .qr-line img {
-      width: 160px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 122, 255, 0.3);
-    }
-
-    @media (max-width: 600px) {
+    @media (min-width: 768px) {
       header h1 {
-        font-size: 2.2rem;
+        font-size: 3rem;
       }
 
-      header p {
-        font-size: 1rem;
+      .quote, section {
+        max-width: 750px;
+        margin: 2rem auto;
+      }
+
+      p, li {
+        font-size: 1.05rem;
       }
 
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Benja</h1>
-    <p>ที่ปรึกษากลยุทธ์ข้อมูล | BI & Analytics Specialist</p>
-  </header>
-
-  <main>
-    <section>
-      <h2>บริการวิเคราะห์ข้อมูลเชิงกลยุทธ์</h2>
-      <ul>
-        <li>แปลงข้อมูลย้อนหลังเป็นข้อมูลเชิงกลยุทธ์</li>
-        <li>วิเคราะห์ด้วย Python, Excel, และ Power BI</li>
-        <li>ให้คำแนะนำเชิงธุรกิจจากข้อมูลจริง</li>
-        <li>สร้างรายงานและ Dashboard สำหรับผู้บริหาร</li>
-      </ul>
-    </section>
-
-    <section class="project">
-      <h2>ตัวอย่างผลงาน Power BI</h2>
-      <p>ดูรายงานจริงผ่านลิงก์: 
-        <a href="https://benja1476.github.io/iStockView---Power-BI/" target="_blank">คลิกที่นี่</a>
-      </p>
-      <img src="https://images.unsplash.com/photo-1581090700227-1d1e9c207853?auto=format&fit=crop&w=800&q=80" alt="BI Dashboard Preview">
-    </section>
-
-    <section>
-      <h2>ข้อมูลที่ใช้สร้างกลยุทธ์ได้เปรียบ</h2>
-      <ul>
-        <li>ข้อมูลยอดขายย้อนหลัง — วิเคราะห์แนวโน้มและฤดูกาลตลาด</li>
-        <li>ข้อมูลลูกค้า — ประเภทพฤติกรรมและกลุ่มเป้าหมาย</li>
-        <li>ข้อมูลสต็อกสินค้า — ระดับสต็อกและจังหวะเติมสินค้า</li>
-        <li>ข้อมูลการแข่งขัน — การเคลื่อนไหวของคู่แข่งในตลาด</li>
-        <li>ข้อมูลต้นทุนและกำไร — วิเคราะห์จุดคุ้มทุนและโอกาสเพิ่มกำไร</li>
-        <li>ข้อมูลพฤติกรรมผู้บริโภค — เพื่อปรับกลยุทธ์ให้สอดคล้อง</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>กลยุทธ์ที่รองรับในหลากหลายอุตสาหกรรม</h2>
-      <ul>
-        <li>📦 การวางแผนสต็อกสินค้า (Inventory Optimization)</li>
-        <li>📈 การวิเคราะห์ยอดขายและแนวโน้มตลาด</li>
-        <li>🧠 การคาดการณ์ความต้องการสินค้า (Demand Forecasting)</li>
-        <li>🛍️ การวิเคราะห์ลูกค้าและพฤติกรรม</li>
-        <li>📊 การสร้างแคมเปญและโปรโมชั่นจากข้อมูล</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>สิ่งที่คุณจะได้รับจาก Benja</h2>
-      <div class="card">
-        <strong>📌 Strategy Summary Report</strong><br>
-        สรุปเชิงกลยุทธ์อ่านง่าย พร้อมใช้งานจริง
-      </div>
-      <div class="card">
-        <strong>📌 Power BI Dashboard</strong><br>
-        Dashboard ที่เข้าใจง่าย ใช้ได้ทั้งในมือถือและคอมพิวเตอร์
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Benja | กลยุทธ์สวนกระแสที่แม่นยำ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Kanit', sans-serif;
-      background-color: #0a0a0a;
-      color: #f0f0f0;
-    }
-
-    header {
-      background: radial-gradient(ellipse at center, #000 0%, #111a22 100%);
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #00ffaa;
-      text-shadow: 0 0 10px #00ffaa66;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cccccc;
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-
-    .quote {
-      background-color: #141e27;
-      padding: 2rem;
-      margin: 2rem;
-      border-left: 6px solid #00ffaa;
-      font-size: 1.2rem;
-      color: #d0fefc;
-      box-shadow: 0 0 30px rgba(0,255,170,0.1);
-    }
-
-    .quote strong {
-      color: #00ffaa;
-    }
-
-    section {
-      padding: 2rem;
-      margin: 1.5rem auto;
-      max-width: 900px;
-      background-color: #111;
-      border-radius: 12px;
-      box-shadow: 0 0 40px rgba(0,255,170,0.05);
-    }
-
-    h2 {
-      color: #00ffaa;
-      border-left: 4px solid #00ffaa;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    ul li {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #0c0c0c;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: #00ffaa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -289,43 +127,41 @@
   </div>
 
   <section>
-    <h2>📌 ทำไมต้องสวนกระแส?</h2>
+    <h2>📌 ทำไมต้องกล้าคิดต่าง?</h2>
     <ul>
       <li>เพราะข้อมูลบอกสิ่งที่ต่างจากความรู้สึก</li>
-      <li>เพราะกลยุทธ์ที่ได้เปรียบ คือสิ่งที่คนส่วนใหญ่ไม่กล้าทำ</li>
-      <li>เพราะผลลัพธ์ที่ยั่งยืน มาจากการตัดสินใจที่มั่นใจจากข้อมูลจริง</li>
+      <li>กลยุทธ์ที่ดีคือการอ่าน “สิ่งที่คนส่วนใหญ่มองข้าม”</li>
+      <li>ผลลัพธ์ระยะยาวมาจากการตัดสินใจที่มั่นใจ ไม่ใช่ตามฝูงชน</li>
     </ul>
   </section>
 
   <section>
     <h2>🎯 เราทำอะไรให้คุณ</h2>
     <ul>
-      <li>วิเคราะห์ข้อมูลย้อนหลังเพื่อหา "โอกาสสวนทาง" ที่ชัดเจน</li>
-      <li>ใช้ Python, Power BI, และ Machine Learning เพื่อสนับสนุนการตัดสินใจ</li>
-      <li>ให้คำปรึกษาแบบ 1-on-1 พร้อมรายงานสรุปที่ใช้งานได้จริง</li>
+      <li>วิเคราะห์ข้อมูลย้อนหลังเพื่อหา “โอกาสสวนทาง” ที่ชัดเจน</li>
+      <li>ใช้ Python, Power BI, Machine Learning ช่วยสนับสนุนการตัดสินใจ</li>
+      <li>ให้คำปรึกษา 1-on-1 พร้อมสรุปผลในรูปแบบที่นำไปใช้ได้จริง</li>
     </ul>
   </section>
 
   <section>
-    <h2>🔍 สิ่งที่คุณจะได้</h2>
+    <h2>📁 สิ่งที่คุณจะได้รับ</h2>
     <ul>
-      <li>✅ Strategy Report ที่แตกต่างจากที่เคยเห็น</li>
-      <li>✅ Dashboard เชิงลึกที่ไม่ใช่แค่กราฟสวย</li>
-      <li>✅ Insight ที่พร้อมเปลี่ยนวิธีคิดของทั้งทีม</li>
+      <li>✅ Strategy Report ที่ “ไม่ตามตำรา”</li>
+      <li>✅ Dashboard ที่ไม่ใช่แค่สวย แต่ใช้วางแผนธุรกิจได้จริง</li>
+      <li>✅ Insight ที่กลั่นมาจากประสบการณ์จริง ไม่ใช่สูตรสำเร็จทั่วไป</li>
     </ul>
   </section>
 
   <section>
-    <h2>📞 ติดต่อ</h2>
+    <h2>📞 ติดต่อ Benja</h2>
     <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
-    <p>LINE: <strong>ratcha42</strong></p>
-    <p><a href="https://line.me/ti/p/~ratcha42" target="_blank">👉 แชทผ่าน LINE</a></p>
+    <p>LINE: <strong>ratcha42</strong> | <a href="https://line.me/ti/p/~ratcha42" target="_blank">💬 แชทผ่าน LINE</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Benja | วิเคราะห์แบบสวนกระแส สร้างกลยุทธ์แบบคนส่วนน้อยที่ชนะเกมธุรกิจ
+    &copy; 2025 Benja | วิเคราะห์แบบสวนกระแส เพื่อสร้างกลยุทธ์ที่ยืนระยะและแตกต่าง
   </footer>
 
 </body>
 </html>
-
